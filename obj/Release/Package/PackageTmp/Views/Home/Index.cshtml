@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Timbre</h1>
+    <p>The collection and access of music has become one of the defining features of modern, common computer usage, and singlehandedly molded the current face of pocket computing.
+    And yet, almost all widely used music collections give the user a mere handful of options to control and access their music. Why is that acceptable?</p>
+    <p class="lead">The easy answer is that it isn't. Timbre is designed with user control first in mind. No more of your music player telling you where to store your music.
+    No more tossing your tunes out because it didn't match their syncing standards. No more putting up with rudimentary search functions built on the criteria that they think is important.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Search Artists</h2>
+        @using (Html.BeginForm("Search", "Albums", FormMethod.Get))
+        {
+         <input type="text" name="q" />
+         <input type="submit" value="Find" /> 
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Search Songs</h2>
+       @using (Html.BeginForm("Search", "Songs", FormMethod.Get))
+       {
+        <input type="text" name="q" />
+        <input type="submit" value="Find" />
+       }
+    </div>
+    <div class="col-md-4">
+        <h2>Search Albums</h2>
+        @using (Html.BeginForm("Search", "Albums", FormMethod.Get))
+        {
+            <input type="text" name="q" />
+            <input type="submit" value="Find" />
+        }
+    </div>
+</div>

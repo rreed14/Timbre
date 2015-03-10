@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Timbre.Models.Song>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Artist)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Album)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SongID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SongID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SongID })
+            </td>
+        </tr>
+    }
+
+</table>
